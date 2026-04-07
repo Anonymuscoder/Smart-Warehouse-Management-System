@@ -10,5 +10,8 @@ public class Electronics extends Product{
         this.warranty = warranty;
     }
 
+    public double getPrice(){
+        return getBasePrice();
+    }
 
 }
