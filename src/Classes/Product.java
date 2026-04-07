@@ -1,10 +1,10 @@
 package Classes;
 
-public class Product {
-    int id;
-    String name;
-    int quantity;
-    double basePrice;
+public abstract class Product {
+    private int id;
+    private String name;
+    private int quantity;
+    private double basePrice;
 
     public Product(int id, String name, int quantity, double basePrice){
         this.id = id;
@@ -22,7 +22,11 @@ public class Product {
     }
 
     public void setQuantity(int quantity) {
-        this.quantity = quantity;
+        if (quantity >= 0){
+            this.quantity = quantity;
+        }else{
+            throw new IllegalArgumentException("Quantity must be greater than 0");
+        }
     }
 
     public double getBasePrice() {
